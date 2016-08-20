@@ -24,9 +24,9 @@ sms-service {
 ```
 sbt run -Dconfig.resource=application.test.conf 
 ```
-- send a SMS
+- send a SMS (49 for germany in the example)
 ```
-http://localhost:8080/send?receiver=0049401234&msg=Hello!
+http://localhost:8080/send?receiver=49401234&msg=Hello!
 ````
 
 
