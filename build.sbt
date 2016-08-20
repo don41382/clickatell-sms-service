@@ -48,12 +48,12 @@ ebBundleTargetFiles in aws <<= Def.task {
   val packageJarFile = (packageBin in Compile).value
   Seq(
     (base / "target/docker/Dockerfile", "Dockerfile"),
-    (base / "Dockerrun.aws.json", "Dockerrun.aws.json"),
-    (packageJarFile, packageJarFile.name)
+    (base / "/conf/Dockerrun.aws.json", "Dockerrun.aws.json"),
+    (packageJarFile, "/" + packageJarFile.name)
   )
 }
 
-ebS3CreateBucket in aws := true
+// ebS3CreateBucket in aws := true
 
 // remove application.test.conf from assembly
 assemblyMergeStrategy in assembly := {
