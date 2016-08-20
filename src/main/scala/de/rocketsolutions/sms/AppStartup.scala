@@ -21,7 +21,7 @@ object AppStartup extends App {
   val appConf = new AppConfig(ConfigFactory.load())
   val smsService = new SMSService(appConf.smsServiceConf)
 
-  val service = system.actorOf(Props(new SMSRestActor(appConf.apiConf, smsService)), "demo-service")
+  val service = system.actorOf(Props(new SMSRestActor(appConf.apiConf, smsService)), "sms-rest-actor")
 
   IO(Http) ? Http.Bind(service, interface = "0.0.0.0", port = 8080)
 }

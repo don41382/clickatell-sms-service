@@ -55,7 +55,7 @@ ebBundleTargetFiles in aws <<= Def.task {
 
 ebS3CreateBucket in aws := true
 
-
+// remove application.test.conf from assembly
 assemblyMergeStrategy in assembly := {
   case PathList("application.test.conf") => MergeStrategy.discard
   case other =>
