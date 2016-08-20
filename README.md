@@ -22,7 +22,7 @@ sms-service {
 ```
 - run
 ```
-sbt run -Dconfig.ressource=conf/application.prod.conf
+sbt run -Dconfig.resource=application.test.conf 
 ```
 - send a SMS
 ```
